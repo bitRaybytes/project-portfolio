@@ -1,0 +1,1973 @@
+/* 
+Project Name: Symbol
+Description: Pure CSS font #3
+Author: @c4rin3
+Author URI: http://c4rin3.vituelles.fr
+*/
+*, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 3px;
+  color: white;
+  margin: 0;
+  background: #1A1A1A;
+  font-family: helvetica, arial, sans-serif;
+  text-align: center;
+}
+h2, p, h1 {
+  letter-spacing: 1px;
+  font-weight: 300;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+h1 { font-size: 3px; }
+p { font-size: 14px; }
+
+.wrapper {
+  width: 80%;
+  margin: 20em auto ;
+  padding: 5%;
+  border-top: 0.8em solid white;
+  border-bottom: 0.8em solid white;
+  border-right: 0.8em solid yellow;
+  border-left: 0.8em solid yellow;
+}
+
+header, section {
+  margin: 0 auto;
+}
+header {
+/*  border-bottom: 1px solid;*/
+  padding-bottom: 20em;
+}
+
+
+/* ELEMENTS
+-------------------------------------------------- */
+.element {
+  width:6em;
+  height:6em;
+  position: relative;
+  margin: 3em;
+  /*border:1em solid ;*/
+  display: inline-block;
+}
+
+/* SEMI-CIRCLE STROKE
+-------------------------------------------------- */
+.element.semi-circle:after {
+  content:"";
+  position: absolute;
+  border: 0.8em solid;
+  background: none;
+}
+/* -- SEMI-CIRCLE PLAIN -- */
+.semi-circle.plain:after {
+  background: white;
+}
+.semi-circle.top:after , .semi-circle.bottom:after {
+  width:100%;
+  height: 50%;
+}
+.semi-circle.top:after {
+  border-radius: 50% / 100% 100% 0 0;
+  border-bottom: none;
+  left: 0;
+}
+.semi-circle.bottom:after {
+  border-radius: 50% / 0 0 100% 100%;
+  border-top: none;
+  bottom: 0;
+  left: 0;
+}
+.semi-circle.left:after , .semi-circle.right:after {
+  width:50%;
+  height: 100%;
+}
+.semi-circle.left:after {
+  border-radius: 200% 0 0 200% / 100% 0 0 100%;
+  border-right: none;
+  left:0;
+}
+.semi-circle.right:after {
+  border-radius: 0 200% 200% 0 / 0 100% 100% 0;
+  border-left: none;
+  right: 0;
+}
+/* Lines
+-------------------------------------------------- */
+.element.line {
+  height:0;
+}
+.element.line:after {
+  content:"";
+  position: absolute;
+  border-top: 0.4em solid;
+  width:100%;
+  top:0;
+  left: 0;
+}
+/* line vertical */
+.element.line.vertical {
+  width:0;
+}
+.line.vertical:after {
+  content:"";
+  position: absolute;
+  border-top: none;
+  border-left: 0.4em solid;
+  height:100%;
+  top:0;
+  left: 0;
+}
+/* ANIMATION
+-------------------------------------------------- */
+/* ALPHABET */
+.letter .element {
+  transition: all 1s ease-in-out;
+}
+.letter:hover .element{
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.letter:hover .semi-circle{
+  animation-name: rotation-left;
+}
+.letter:hover .line{
+  animation-name: drawline;
+}
+.letter:hover .line.vertical{
+  animation-name: drawlinevert;
+}
+
+.letter.A:hover :nth-child(3), .letter.A:hover :nth-child(5), .letter.A:hover :nth-child(7), .letter.A:hover :nth-child(8), .letter.A:hover :nth-child(17), 
+.letter.B:hover :nth-child(3), .letter.B:hover :nth-child(5), .letter.B:hover :nth-child(6), .letter.B:hover :nth-child(7), .letter.B:hover :nth-child(11), .letter.B:hover :nth-child(12),
+.letter.C:hover :nth-child(2), .letter.C:hover :nth-child(4), .letter.C:hover :nth-child(6), .letter.C:hover :nth-child(10), .letter.C:hover :nth-child(11), 
+.letter.D:hover :nth-child(3), .letter.D:hover :nth-child(5), .letter.D:hover :nth-child(7), .letter.D:hover :nth-child(8), .letter.D:hover :nth-child(12),
+.letter.E:hover :nth-child(3), .letter.E:hover :nth-child(4), .letter.E:hover :nth-child(5), .letter.E:hover :nth-child(9), .letter.E:hover :nth-child(12), .letter.E:hover :nth-child(13), .letter.E:hover :nth-child(14),
+.letter.F:hover :nth-child(2), .letter.F:hover :nth-child(6), .letter.F:hover :nth-child(7), .letter.F:hover :nth-child(9), .letter.F:hover :nth-child(12),
+.letter.G:hover :nth-child(2), .letter.G:hover :nth-child(4), .letter.G:hover :nth-child(7),
+.letter.H:hover :nth-child(2), .letter.H:hover :nth-child(9), .letter.H:hover :nth-child(5), .letter.H:hover :nth-child(6), .letter.H:hover :nth-child(11), .letter.H:hover :nth-child(12), .letter.H:hover :nth-child(14),
+.letter.I:hover :nth-child(2), .letter.I:hover :nth-child(9), .letter.I:hover :nth-child(7), .letter.I:hover :nth-child(6), .letter.I:hover :nth-child(11), .letter.I:hover :nth-child(10), .letter.I:hover :nth-child(14),
+.letter.J:hover :nth-child(2), .letter.J:hover :nth-child(4), .letter.J:hover :nth-child(6), .letter.J:hover :nth-child(8), 
+.letter.K:hover :nth-child(3), .letter.K:hover :nth-child(4), .letter.K:hover :nth-child(5), .letter.K:hover :nth-child(9), .letter.K:hover :nth-child(12), .letter.K:hover :nth-child(13), .letter.K:hover :nth-child(15),
+.letter.L:hover :nth-child(3), .letter.L:hover :nth-child(5), .letter.L:hover :nth-child(6), .letter.L:hover :nth-child(9),
+.letter.M:hover :nth-child(2), .letter.M:hover :nth-child(9), .letter.M:hover :nth-child(5), .letter.M:hover :nth-child(6), .letter.M:hover :nth-child(11), .letter.M:hover :nth-child(12), .letter.M:hover :nth-child(15),
+.letter.N:hover :nth-child(2), .letter.N:hover :nth-child(4), .letter.N:hover :nth-child(9), .letter.N:hover :nth-child(10), 
+.letter.O:hover :nth-child(2), .letter.O:hover :nth-child(5), .letter.O:hover :nth-child(8), 
+.letter.P:hover :nth-child(2), .letter.P:hover :nth-child(5), .letter.P:hover :nth-child(6), .letter.P:hover :nth-child(8), .letter.P:hover :nth-child(10),
+.letter.Q:hover :nth-child(2), .letter.Q:hover :nth-child(5), .letter.Q:hover :nth-child(8), 
+.letter.R:hover :nth-child(2), .letter.R:hover :nth-child(5), .letter.R:hover :nth-child(6), .letter.R:hover :nth-child(8), .letter.R:hover :nth-child(10), .letter.R:hover :nth-child(12), .letter.R:hover :nth-child(13),
+.letter.S:hover :nth-child(2), .letter.S:hover :nth-child(4), .letter.S:hover :nth-child(9), .letter.S:hover :nth-child(10), 
+.letter.T:hover :nth-child(2), .letter.T:hover :nth-child(5), .letter.T:hover :nth-child(6), .letter.T:hover :nth-child(8), .letter.T:hover :nth-child(10), 
+.letter.U:hover :nth-child(2), .letter.U:hover :nth-child(4), .letter.U:hover :nth-child(6), .letter.U:hover :nth-child(10), .letter.U:hover :nth-child(11),
+.letter.V:hover :nth-child(2), .letter.V:hover :nth-child(5), .letter.V:hover :nth-child(7), .letter.V:hover :nth-child(9), .letter.V:hover :nth-child(10), .letter.V:hover :nth-child(13),
+.letter.W:hover :nth-child(2), .letter.W:hover :nth-child(9), .letter.W:hover :nth-child(5), .letter.W:hover :nth-child(6), .letter.W:hover :nth-child(11), .letter.W:hover :nth-child(12), .letter.W:hover :nth-child(16),
+.letter.X:hover :nth-child(2), .letter.X:hover :nth-child(5), .letter.X:hover :nth-child(9), .letter.X:hover :nth-child(12), .letter.X:hover :nth-child(11), .letter.X:hover :nth-child(14),
+.letter.Y:hover :nth-child(3), .letter.Y:hover :nth-child(6), .letter.Y:hover :nth-child(7), .letter.Y:hover :nth-child(11), .letter.Y:hover :nth-child(8),
+.letter.Z:hover :nth-child(11), .letter.Z:hover :nth-child(13), .letter.Z:hover :nth-child(4), .letter.Z:hover :nth-child(7)
+{
+  animation-name: rotation-right;
+}
+
+.letter.A :nth-child(3), .letter.A :nth-child(5), .letter.A :nth-child(7), .letter.A :nth-child(8), .letter.A :nth-child(17), 
+.letter.B :nth-child(3), .letter.B :nth-child(5), .letter.B :nth-child(6), .letter.B :nth-child(7), .letter.B :nth-child(11), .letter.B :nth-child(12), 
+.letter.C :nth-child(2), .letter.C :nth-child(4), .letter.C :nth-child(6), .letter.C :nth-child(10), .letter.C :nth-child(11),
+.letter.D :nth-child(3), .letter.D :nth-child(5), .letter.D :nth-child(7), .letter.D :nth-child(8), .letter.D :nth-child(12),
+.letter.E :nth-child(3), .letter.E :nth-child(4), .letter.E :nth-child(5), .letter.E :nth-child(9), .letter.E :nth-child(12), .letter.E :nth-child(13), .letter.E :nth-child(14),
+.letter.F :nth-child(2), .letter.F :nth-child(6), .letter.F :nth-child(7), .letter.F :nth-child(9), .letter.F :nth-child(12),
+.letter.G :nth-child(2), .letter.G :nth-child(4), .letter.G :nth-child(7), 
+.letter.H :nth-child(2), .letter.H :nth-child(9), .letter.H :nth-child(5), .letter.H :nth-child(6), .letter.H :nth-child(11), .letter.H :nth-child(12), .letter.H :nth-child(14),
+.letter.I :nth-child(2), .letter.I :nth-child(9), .letter.I :nth-child(7), .letter.I :nth-child(6), .letter.I :nth-child(11), .letter.I :nth-child(10), .letter.I :nth-child(14),
+.letter.J :nth-child(2), .letter.J :nth-child(4), .letter.J :nth-child(6), .letter.J :nth-child(8), 
+.letter.K :nth-child(3), .letter.K :nth-child(4), .letter.K :nth-child(5), .letter.K :nth-child(9), .letter.K :nth-child(12), .letter.K :nth-child(13), .letter.K :nth-child(15),
+.letter.L :nth-child(3), .letter.L :nth-child(5), .letter.L :nth-child(6), .letter.L :nth-child(9),
+.letter.M :nth-child(2), .letter.M :nth-child(9), .letter.M :nth-child(5), .letter.M :nth-child(6), .letter.M :nth-child(11), .letter.M :nth-child(12), .letter.M :nth-child(15),
+.letter.N :nth-child(2), .letter.N :nth-child(4), .letter.N :nth-child(9), .letter.N :nth-child(10), 
+.letter.O :nth-child(2), .letter.O :nth-child(5), .letter.O :nth-child(8),
+.letter.P :nth-child(2), .letter.P :nth-child(5), .letter.P :nth-child(6), .letter.P :nth-child(8), .letter.P :nth-child(10),
+.letter.Q :nth-child(2), .letter.Q :nth-child(5), .letter.Q :nth-child(8),
+.letter.R :nth-child(2), .letter.R :nth-child(5), .letter.R :nth-child(6), .letter.R :nth-child(8), .letter.R :nth-child(10), .letter.R :nth-child(12), .letter.R :nth-child(13),
+.letter.S :nth-child(2), .letter.S :nth-child(4), .letter.S :nth-child(9), .letter.S :nth-child(10), 
+.letter.T :nth-child(2), .letter.T :nth-child(5), .letter.T :nth-child(6), .letter.T :nth-child(8), .letter.T :nth-child(10), 
+.letter.U :nth-child(2), .letter.U :nth-child(4), .letter.U :nth-child(6), .letter.U :nth-child(10), .letter.U :nth-child(11),
+.letter.V :nth-child(2), .letter.V :nth-child(5), .letter.V :nth-child(7), .letter.V :nth-child(9), .letter.V :nth-child(10), .letter.V :nth-child(13), 
+.letter.W :nth-child(2), .letter.W :nth-child(9), .letter.W :nth-child(5), .letter.W :nth-child(6), .letter.W :nth-child(11), .letter.W :nth-child(12), .letter.W :nth-child(16),
+.letter.X :nth-child(2), .letter.X :nth-child(5), .letter.X :nth-child(9), .letter.X :nth-child(12), .letter.X :nth-child(11), .letter.X :nth-child(14),
+.letter.Y :nth-child(3), .letter.Y :nth-child(6), .letter.Y :nth-child(7), .letter.Y :nth-child(11), .letter.Y :nth-child(8), 
+.letter.Z :nth-child(11), .letter.Z :nth-child(13), .letter.Z :nth-child(4), .letter.Z :nth-child(7)
+{
+  color: yellow;
+}
+/* ELEMENTS ANIMATION
+-------------------------------------------------- */
+@keyframes rotation-right {
+  0%{ transform: rotate(0deg); }
+  50%{ transform: rotate(360deg); }
+  100%{ transform: rotate(360deg); }
+}
+@keyframes rotation-left {
+  0%{ transform: rotate(0deg); }
+  50%{ transform: rotate(-360deg); }
+  100%{ transform: rotate(-360deg); }
+}
+
+@keyframes drawline {
+  0%{ transform: scaleX(1); }
+  25%{ transform: scaleX(0); }
+  50%{ transform: scaleX(-1); }
+  100%{ transform: scaleX(-1); }
+}
+
+@keyframes drawlinevert {
+  0%{ transform: scaleY(1); }
+  25%{ transform: scaleY(0); }
+  50%{ transform: scaleY(-1); }
+  100%{ transform: scaleY(-1); }
+}
+
+
+
+
+
+/* LETTERS SPEC.
+-------------------------------------------------- */
+.letter {
+  width: 30em; /*150px*/
+  height: 30em;
+  font-weight: bold;
+  margin: 12em;
+  position: relative;
+  display: inline-block;
+}
+.word .letter {
+  margin: 6em;
+}
+.letter:hover {
+  cursor: pointer;
+}
+.letter p {
+  font-size: 150em;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  opacity: 0.2;
+  color: #222;
+  display: none;
+}
+.letter .element {
+  margin: 0;
+  position: absolute;
+  border:none;
+}
+
+/* A
+-------------------------------------------------- */
+.letter.A :nth-child(2){
+  top: 0em;
+  left: 6em;
+  width:18em;height: 18em;
+}
+.letter.A :nth-child(3){
+  top: 3em;
+  left: 9em;
+  width:12em;height: 12em;
+}
+.letter.A :nth-child(4){
+  top: 6em;
+  left: 3em;
+}
+.letter.A :nth-child(5){
+  top: 6em;
+  right: 3em;
+}
+.letter.A :nth-child(6){
+  top: 21em;
+  left: 3em;
+}
+.letter.A :nth-child(7){
+  top: 21em;
+  right: 3em;
+}
+.letter.A :nth-child(8){
+  top: 21em;
+  left: 3em;
+}
+.letter.A :nth-child(9){
+  top: 21em;
+  right: 3em;
+}
+.letter.A :nth-child(10){
+  width:12em; height: 12em;
+  top: 18em;
+  left: 0em;
+}
+.letter.A :nth-child(11){
+  width:12em; height: 12em;
+  top: 18em;
+  right: 0em;
+}
+.letter.A :nth-child(12){
+  width:24em;
+  top: 15em;
+  left: 3em;
+}
+.letter.A :nth-child(13){
+  height: 12em;
+  top: 12em;
+  left: 6em;
+}
+.letter.A :nth-child(14){
+  height: 12em;
+  top: 12em;
+  right: 6em;
+}
+.letter.A :nth-child(15){
+  height: 9em;
+  top: 9em;
+  left: 15em;
+}
+.letter.A :nth-child(16), .letter.A :nth-child(17) {
+  width:6em; height: 6em;
+  top: 6em;
+  left: 12em;
+}
+/* B
+-------------------------------------------------- */
+.letter.B :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.B :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.B :nth-child(4){
+  width:12em;height: 12em;
+  top: 3em;
+  right: 0em;
+}
+.letter.B :nth-child(5){
+  width:12em;height: 12em;
+  bottom: 3em;
+  right: 0em;
+}
+.letter.B :nth-child(6){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.B :nth-child(7){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.B :nth-child(8){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.B :nth-child(9){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.B :nth-child(10){
+  width:6em;height:6em;
+  top: 6em;
+  right: 3em;
+}
+.letter.B :nth-child(11){
+  width:6em;height:6em;
+  bottom: 6em;
+  right: 3em;
+}
+.letter.B :nth-child(12){
+  width:6em;height:6em;
+  top: 6em;
+  right: 3em;
+}
+.letter.B :nth-child(13){
+  width:6em;height:6em;
+  bottom: 6em;
+  right: 3em;
+}
+.letter.B :nth-child(14){
+  width:24em;
+  top: 15em;
+  left: 0em;
+}
+.letter.B :nth-child(15){
+  height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.B :nth-child(16){
+  width:9em;
+  top: 9em;
+  left: 15em;
+}
+.letter.B :nth-child(17){
+  width:9em;
+  bottom: 9em;
+  left: 15em;
+}
+
+/* C
+-------------------------------------------------- */
+.letter.C :nth-child(2){
+  width: 30em;
+  height: 30em;
+  top: 0em;
+  left: 0em;
+}
+.letter.C :nth-child(3){
+  width: 18em;
+  height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.C :nth-child(4){
+  width: 6em;
+  height: 6em;
+  top: 3em;
+  right: 12em;
+}
+.letter.C :nth-child(5){
+  width: 6em;
+  height: 6em;
+  bottom: 3em;
+  right: 12em;
+}
+.letter.C :nth-child(6){
+  width: 12em;
+  height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.C :nth-child(7){
+  width: 12em;
+  height: 12em;
+  bottom: 0em;
+  right: 0em;
+}
+.letter.C :nth-child(8){
+  width: 6em;
+  height: 6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.C :nth-child(9){
+  width: 6em;
+  height: 6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.C :nth-child(10){
+  width: 6em;
+  height: 6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.C :nth-child(11){
+  width: 6em;
+  height: 6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.C :nth-child(12){
+  width:6em;
+  top: 6em;
+  right:6em;
+}
+.letter.C :nth-child(13){
+  width:6em;
+  bottom: 6em;
+  right:6em;
+}
+/* D
+-------------------------------------------------- */
+.letter.D :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.D :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.D :nth-child(4){
+  width:30em;height: 30em;
+  top: 0em;
+  right: 0em;
+}
+.letter.D :nth-child(5){
+  width:18em;height: 18em;
+  top: 6em;
+  right: 6em;
+}
+.letter.D :nth-child(6){
+  width:6em;height: 6em;
+  top: 12em;
+  right: 12em;
+}
+.letter.D :nth-child(7){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.D :nth-child(8){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.D :nth-child(9){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.D :nth-child(10){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.D :nth-child(11){
+  width:12em;height:12em;
+  top: 9em;
+  left: 9em;
+}
+.letter.D :nth-child(12){
+  width:12em;height:12em;
+  bottom: 9em;
+  left: 9em;
+}
+.letter.D :nth-child(13){
+  height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.D :nth-child(14){
+  width:9em;
+  top: 15em;
+  left: 0em;
+}
+/* E
+-------------------------------------------------- */
+.letter.E :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.E :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.E :nth-child(4){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.E :nth-child(5){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.E :nth-child(6){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.E :nth-child(7){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.E :nth-child(8){
+  width:12em;height:12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.E :nth-child(9){
+  width:12em;height:12em;
+  bottom: 0em;
+  right: 0em;
+}
+.letter.E :nth-child(10){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.E :nth-child(11){
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.E :nth-child(12){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.E :nth-child(13){
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.E :nth-child(14){
+  width:6em;height:6em;
+  top: 12em;
+  left: 12em;
+}
+.letter.E :nth-child(15){
+  width:6em;height:6em;
+  top: 12em;
+  left: 12em;
+}
+.letter.E :nth-child(16){
+  width:12em;height:12em;
+  top: 9em;
+  left: 9em;
+}
+.letter.E :nth-child(17){
+  height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.E :nth-child(18){
+  width:9em;
+  top: 6em;
+  right:6em;
+}
+.letter.E :nth-child(19){
+  width:9em;
+  bottom: 6em;
+  right:6em;
+}
+.letter.E :nth-child(20){
+  width:15em;
+  top: 15em;
+  left:0em;
+}
+/* F
+-------------------------------------------------- */
+.letter.F :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.F :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.F :nth-child(4){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.F :nth-child(5){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.F :nth-child(6){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.F :nth-child(7){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.F :nth-child(8){
+  width:12em;height:12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.F :nth-child(9){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.F :nth-child(10){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.F :nth-child(11){
+  width:12em;height:12em;
+  top: 9em;
+  left: 9em;
+}
+.letter.F :nth-child(12){
+  width:6em;height:6em;
+  top: 12em;
+  right: 12em;
+}
+.letter.F :nth-child(13){
+  width:6em;height:6em;
+  top: 12em;
+  right: 12em;
+}
+.letter.F :nth-child(14){
+  height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.F :nth-child(15){
+  width:9em;
+  top: 6em;
+  right:6em;
+}
+.letter.F :nth-child(16){
+  width:15em;
+  top: 15em;
+  left:0em;
+}
+/* G
+-------------------------------------------------- */
+.letter.G :nth-child(2){
+  width: 30em;
+  height: 30em;
+  top: 0em;
+  left: 0em;
+}
+.letter.G :nth-child(3){
+  width: 18em; height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.G :nth-child(4){
+  width: 12em; height: 12em;
+  top: 9em;
+  left: 9em;
+}
+.letter.G :nth-child(5){
+  width: 12em; height: 12em;
+  top: 12em;
+  right: 0em;
+}
+.letter.G :nth-child(6){
+  width: 6em; height: 6em;
+  top: 15em;
+  right: 3em;
+}
+.letter.G :nth-child(7){
+  width: 6em; height: 6em;
+  top: 15em;
+  right: 3em;
+}
+.letter.G :nth-child(8){
+  width: 9em;
+  top: 18em;
+  right: 6em;
+}
+.letter.G :nth-child(9){
+  height: 15em;
+  bottom: 0em;
+  right: 12em;
+}
+/* H
+-------------------------------------------------- */
+.letter.H :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.H :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.H :nth-child(4), .letter.H :nth-child(6){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.H :nth-child(5), .letter.H :nth-child(7){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+
+.letter.H :nth-child(8){
+  width:12em;height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.H :nth-child(9){
+  width:12em;height: 12em;
+  bottom: 0em;
+  right: 0em;
+}
+.letter.H :nth-child(10){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.H :nth-child(11){
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.H :nth-child(12){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.H :nth-child(13){
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.H :nth-child(14){
+  width:6em;height:6em;
+  bottom: 12em;
+  right: 12em;
+}
+.letter.H :nth-child(15){
+  width:6em;height:6em;
+  bottom: 12em;
+  right: 12em;
+}
+.letter.H :nth-child(16){
+  height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.H :nth-child(17){
+  height: 18em;
+  top: 6em;
+  right: 6em;
+}
+.letter.H :nth-child(18){
+  width: 9em;
+  top: 15em;
+  left: 3em;
+}
+.letter.H :nth-child(19){
+  width: 9em;
+  top: 15em;
+  right: 3em;
+}
+
+/* I
+-------------------------------------------------- */
+.letter.I :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.I :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.I :nth-child(4), .letter.I :nth-child(6){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.I :nth-child(5), .letter.I :nth-child(7){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+
+.letter.I :nth-child(8){
+  width:12em;height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.I :nth-child(9){
+  width:12em;height: 12em;
+  bottom: 0em;
+  right: 0em;
+}
+.letter.I :nth-child(10){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.I :nth-child(11){
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.I :nth-child(12){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.I :nth-child(13){
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.I :nth-child(14){
+  width:6em;height:6em;
+  bottom: 12em;
+  right: 12em;
+}
+.letter.I :nth-child(15){
+  width:6em;height:6em;
+  bottom: 12em;
+  right: 12em;
+}
+.letter.I :nth-child(16){
+  height: 9em;
+  top: 3em;
+  left: 15em;
+}
+.letter.I :nth-child(17){
+  height: 9em;
+  bottom: 3em;
+  left: 15em;
+}
+.letter.I :nth-child(18){
+  width: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.I :nth-child(19){
+  width: 18em;
+  bottom: 6em;
+  left: 6em;
+}
+/* J
+-------------------------------------------------- */
+.letter.J :nth-child(2){
+  width:30em;height: 30em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.J :nth-child(3){
+  width:18em;height: 18em;
+  bottom: 6em;
+  left: 6em;
+}
+.letter.J :nth-child(4){
+  width:6em;height: 6em;
+  bottom: 12em;
+  left: 12em;
+}
+.letter.J :nth-child(5){
+  width:12em;height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.J :nth-child(6){
+  width:6em;height: 6em;
+  top: 12em;
+  right: 3em;
+}
+.letter.J :nth-child(7), .letter.J :nth-child(8){
+  width:6em;height: 6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.J :nth-child(9){
+  height: 6em;
+  top: 6em;
+  right: 6em;
+}
+/* K
+-------------------------------------------------- */
+.letter.K :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.K :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.K :nth-child(4){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.K :nth-child(5){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.K :nth-child(6){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.K :nth-child(7){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.K :nth-child(8){
+  width:12em;height:12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.K :nth-child(9){
+  width:12em;height:12em;
+  bottom: 0em;
+  right: 0em;
+}
+.letter.K :nth-child(10){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.K :nth-child(11){
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.K :nth-child(12){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.K :nth-child(13){
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.K :nth-child(14){
+  width:6em;height:6em;
+  top: 12em;
+  left: 12em;
+}
+.letter.K :nth-child(15){
+  width:6em;height:6em;
+  top: 12em;
+  left: 12em;
+}
+.letter.K :nth-child(16){
+  width:12em;height:12em;
+  top: 9em;
+  left: 9em;
+}
+.letter.K :nth-child(17){
+  height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.K :nth-child(18){
+  width:6em;
+  top: 6em;
+  right:6em;
+}
+.letter.K :nth-child(19){
+  width:6em;
+  bottom: 6em;
+  right:6em;
+}
+.letter.K :nth-child(20){
+  width:15em;
+  top: 15em;
+  left:0em;
+}
+/* L
+-------------------------------------------------- */
+.letter.L :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.L :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.L :nth-child(4), .letter.L :nth-child(6){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.L :nth-child(5), .letter.L :nth-child(7){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.L :nth-child(8){
+  width:12em;height: 12em;
+  bottom: 0em;
+  right: 0em;
+}
+.letter.L :nth-child(9), .letter.L :nth-child(10){
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.L :nth-child(11){
+  height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.L :nth-child(12){
+  width: 9em;
+  bottom: 6em;
+  right: 6em;
+}
+/* M
+-------------------------------------------------- */
+.letter.M :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.M :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.M :nth-child(4), .letter.M :nth-child(6){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.M :nth-child(5), .letter.M :nth-child(7){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+
+.letter.M :nth-child(8){
+  width:12em;height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.M :nth-child(9){
+  width:12em;height: 12em;
+  bottom: 0em;
+  right: 0em;
+}
+.letter.M :nth-child(10), .letter.M :nth-child(12){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.M :nth-child(11), .letter.M :nth-child(13){
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.M :nth-child(14){
+  width:12em;height: 12em;
+  top: 6em;
+  left: 9em;
+}
+.letter.M :nth-child(15), .letter.M :nth-child(16){
+  width:6em;height: 6em;
+  top: 9em;
+  left: 12em;
+}
+.letter.M :nth-child(17){
+  height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.M :nth-child(18){
+  height: 18em;
+  top: 6em;
+  right: 6em;
+}
+.letter.M :nth-child(19){
+  height: 9em;
+  top: 3em;
+  left: 15em;
+}
+/* N
+-------------------------------------------------- */
+.letter.N :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 3em;
+}
+.letter.N :nth-child(3){
+  width:6em;height: 6em;
+  top: 3em;
+  left: 6em;
+}
+.letter.N :nth-child(4){
+  width:12em;height: 12em;
+  bottom: 0em;
+  right: 3em;
+}
+.letter.N :nth-child(5){
+  width:6em;height: 6em;
+  bottom: 3em;
+  right: 6em;
+}
+.letter.N :nth-child(6){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.N :nth-child(7){
+  width:12em;height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.N :nth-child(8), .letter.N :nth-child(9) {
+  width:6em;height: 6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.N :nth-child(10), .letter.N :nth-child(11) {
+  width:6em;height: 6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.N :nth-child(12) {
+  height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.N :nth-child(13) {
+  height: 18em;
+  top: 6em;
+  right: 6em;
+}
+.letter.N :nth-child(14) {
+  height: 18em;
+  top: 6em;
+  left: 15em;
+}
+
+/* O
+-------------------------------------------------- */
+.letter.O :nth-child(2){
+  width: 30em; height: 30em;
+  top: 0em;
+  left: 0em;
+}
+.letter.O :nth-child(3){
+  width: 30em; height: 30em;
+  top: 0em;
+  left: 0em;
+}
+.letter.O :nth-child(4){
+  width: 18em; height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.O :nth-child(5){
+  width: 18em; height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.O :nth-child(6){
+  width: 12em; height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.O :nth-child(7), .letter.O :nth-child(8){
+  width: 6em; height: 6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.O :nth-child(9){
+  width: 6em; height: 6em;
+  top: 12em;
+  right: 3em;
+}
+.letter.O :nth-child(10){
+  height: 6em;
+  top: 6em;
+  right: 6em;
+}
+
+/* P
+-------------------------------------------------- */
+.letter.P :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.P :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.P :nth-child(4), .letter.P :nth-child(6){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.P :nth-child(5), .letter.P :nth-child(7){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.P :nth-child(8){
+  width:18em;height:18em;
+  top: 0;
+  right: 0;
+}
+.letter.P :nth-child(9){
+  width:12em;height:12em;
+  top: 3em;
+  right: 3em;
+}
+.letter.P :nth-child(10), .letter.P :nth-child(11) {
+  width:6em;height:6em;
+  top: 6em;
+  right: 6em;
+}
+.letter.P :nth-child(12){
+  height:18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.P :nth-child(13){
+  width:12em;
+  top: 15em;
+  left: 3em;
+}
+.letter.P :nth-child(14){
+  width:9em;
+  top: 9em;
+  left: 12em;
+}
+
+/* Q
+-------------------------------------------------- */
+.letter.Q :nth-child(2){
+  width: 30em; height: 30em;
+  top: 0em;
+  left: 0em;
+}
+.letter.Q :nth-child(3){
+  width: 30em; height: 30em;
+  top: 0em;
+  left: 0em;
+}
+.letter.Q :nth-child(4){
+  width: 18em; height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.Q :nth-child(5){
+  width: 18em; height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.Q :nth-child(6){
+  width: 12em; height: 12em;
+  bottom: 0em;
+  right: 0em;
+}
+.letter.Q :nth-child(7), .letter.Q :nth-child(8){
+  width: 6em; height: 6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.Q :nth-child(9){
+  width: 6em; height: 6em;
+  right: 12em;
+  bottom: 3em;
+}
+.letter.Q :nth-child(10){
+  width: 6em;
+  bottom: 6em;
+  right: 6em;
+}
+/* R
+-------------------------------------------------- */
+.letter.R :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.R :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.R :nth-child(4), .letter.R :nth-child(6){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.R :nth-child(5), .letter.R :nth-child(7){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.R :nth-child(8){
+  width:18em;height:18em;
+  top: 0;
+  right: 0;
+}
+.letter.R :nth-child(9){
+  width:12em;height:12em;
+  top: 3em;
+  right: 3em;
+}
+.letter.R :nth-child(10), .letter.R :nth-child(11) {
+  width:6em;height:6em;
+  top: 6em;
+  right: 6em;
+}
+
+.letter.R :nth-child(12) {
+  width:12em;height:12em;
+  bottom: 0em;
+  right: 3em;
+}
+.letter.R :nth-child(13), .letter.R :nth-child(14) {
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 6em;
+}
+.letter.R :nth-child(15){
+  height:18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.R :nth-child(16){
+  width:12em;
+  top: 15em;
+  left: 3em;
+}
+.letter.R :nth-child(17){
+  width:9em;
+  top: 9em;
+  left: 12em;
+}
+/* S
+-------------------------------------------------- */
+.letter.S :nth-child(2){
+  width: 12em; height: 12em;
+  top: 3em;
+  left: 3em;
+}
+.letter.S :nth-child(3){
+  width: 6em; height: 6em;
+  top: 6em;
+  left: 6em;
+}
+.letter.S :nth-child(4){
+  width: 12em; height: 12em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.S :nth-child(5){
+  width: 6em; height: 6em;
+  bottom: 6em;
+  right: 6em;
+}
+.letter.S :nth-child(6){
+  width: 6em; height: 6em;
+  top: 3em;
+  left: 9em;
+}
+.letter.S :nth-child(7){
+  width: 6em; height: 6em;
+  bottom: 3em;
+  right: 9em;
+}
+.letter.S :nth-child(8), .letter.S :nth-child(9){
+  width: 6em; height: 6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.S :nth-child(10), .letter.S :nth-child(11){
+  width: 6em; height: 6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.S :nth-child(12){
+  width: 12em; height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.S :nth-child(13){
+  width: 12em; height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.S :nth-child(14){
+  width: 9em;
+  top: 6em;
+  left: 15em;
+}
+.letter.S :nth-child(15){
+  width: 9em;
+  bottom: 6em;
+  right: 15em;
+}
+.letter.S :nth-child(16){
+  width: 12em;
+  top: 15em;
+  left: 9em;
+}
+/* T
+-------------------------------------------------- */
+.letter.T :nth-child(2){
+  width: 12em; height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.T :nth-child(3){
+  width: 12em; height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.T :nth-child(4), .letter.T :nth-child(5) {
+  width: 6em; height: 6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.T :nth-child(6), .letter.T :nth-child(7) {
+  width: 6em; height: 6em;
+  top: 3em;
+  right: 3em;
+}
+
+.letter.T :nth-child(8), .letter.T :nth-child(9) {
+  width: 6em; height: 6em;
+  top: 12em;
+  left: 12em;
+}
+.letter.T :nth-child(10), .letter.T :nth-child(11) {
+  width: 6em; height: 6em;
+  bottom: 3em;
+  left: 12em;
+}
+.letter.T :nth-child(12) {
+  width: 12em; height: 12em;
+  bottom: 0em;
+  left: 9em;
+}
+.letter.T :nth-child(13) {
+  width: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.T :nth-child(14) {
+  height: 9em;
+  top: 3em;
+  left: 15em;
+}
+.letter.T :nth-child(15) {
+  height: 6em;
+  bottom: 6em;
+  left: 15em;
+}
+/* U
+-------------------------------------------------- */
+.letter.U :nth-child(2){
+  width: 30em;
+  height: 30em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.U :nth-child(3){
+  width: 18em;
+  height: 18em;
+  bottom: 6em;
+  left: 6em;
+}
+.letter.U :nth-child(4){
+  width: 6em;
+  height: 6em;
+  top: 12em;
+  left: 3em;
+}
+.letter.U :nth-child(5){
+  width: 6em;
+  height: 6em;
+  top: 12em;
+  right: 3em;
+}
+.letter.U :nth-child(6){
+  width: 12em;
+  height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.U :nth-child(7){
+  width: 12em;
+  height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.U :nth-child(8), .letter.U :nth-child(10){
+  width: 6em;
+  height: 6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.U :nth-child(9), .letter.U :nth-child(11){
+  width: 6em;
+  height: 6em;
+  top: 3em;
+  right: 3em;
+}
+
+.letter.U :nth-child(12){
+  height:6em;
+  top: 6em;
+  left:6em;
+}
+.letter.U :nth-child(13){
+  height:6em;
+  top: 6em;
+  right:6em;
+}
+/* V
+-------------------------------------------------- */
+.letter.V :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.V :nth-child(3){
+  width:12em;height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.V :nth-child(4), .letter.V :nth-child(5) {
+  width: 6em; height: 6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.V :nth-child(6), .letter.V :nth-child(7) {
+  width: 6em; height: 6em;
+  top: 3em;
+  right: 3em;
+}
+
+
+.letter.V :nth-child(8), .letter.V :nth-child(9) {
+  width: 6em; height: 6em;
+  top: 15em;
+  left: 3em;
+}
+.letter.V :nth-child(10), .letter.V :nth-child(11) {
+  width: 6em; height: 6em;
+  top: 15em;
+  right: 3em;
+}
+
+.letter.V :nth-child(12) {
+  width: 6em; height: 6em;
+  top: 12em;
+  left: 12em;
+}
+
+.letter.V :nth-child(13), .letter.V :nth-child(14) {
+  width: 6em; height: 6em;
+  bottom: 3em;
+  left: 12em;
+}
+.letter.V :nth-child(15) {
+  width: 12em; height: 12em;
+  bottom: 0em;
+  left: 9em;
+}
+.letter.V :nth-child(16) {
+  height: 12em;
+  top: 6em;
+  left: 6em;
+}
+.letter.V :nth-child(17) {
+  height: 12em;
+  top: 6em;
+  right: 6em;
+}
+.letter.V :nth-child(18) {
+  height: 6em;
+  bottom: 6em;
+  left: 15em;
+}
+
+/* W
+-------------------------------------------------- */
+.letter.W :nth-child(2){
+  width:12em;height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.W :nth-child(3){
+  width:12em;height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.W :nth-child(4), .letter.W :nth-child(6){
+  width:6em;height:6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.W :nth-child(5), .letter.W :nth-child(7){
+  width:6em;height:6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.W :nth-child(8){
+  width:12em;height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.W :nth-child(9){
+  width:12em;height: 12em;
+  bottom: 0em;
+  right: 0em;
+}
+.letter.W :nth-child(10), .letter.W :nth-child(12){
+  width:6em;height:6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.W :nth-child(11), .letter.W :nth-child(13){
+  width:6em;height:6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.W :nth-child(14){
+  width:12em;height: 12em;
+  top: 12em;
+  left: 9em;
+}
+.letter.W :nth-child(15), .letter.W :nth-child(16){
+  width:6em;height: 6em;
+  bottom: 9em;
+  left: 12em;
+}
+.letter.W :nth-child(17){
+  height: 18em;
+  top: 6em;
+  left: 6em;
+}
+.letter.W :nth-child(18){
+  height: 18em;
+  top: 6em;
+  right: 6em;
+}
+.letter.W :nth-child(19){
+  height: 9em;
+  bottom: 3em;
+  left: 15em;
+}
+/* X
+-------------------------------------------------- */
+.letter.X :nth-child(2){
+  width: 12em; height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.X :nth-child(3){
+  width: 12em; height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.X :nth-child(4){
+  width: 12em; height: 12em;
+  bottom: 0em;
+  left: 0em;
+}
+.letter.X :nth-child(5){
+  width: 12em; height: 12em;
+  bottom: 0em;
+  right: 0em;
+}
+.letter.X :nth-child(6){
+  width: 12em; height: 12em;
+  bottom: 15em;
+  left: 9em;
+}
+.letter.X :nth-child(7){
+  width: 12em; height: 12em;
+  top: 15em;
+  left: 9em;
+}
+.letter.X :nth-child(8), .letter.X :nth-child(9) {
+  width: 6em; height: 6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.X :nth-child(10), .letter.X :nth-child(11) {
+  width: 6em; height: 6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.X :nth-child(12), .letter.X :nth-child(13) {
+  width: 6em; height: 6em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.X :nth-child(14), .letter.X :nth-child(15) {
+  width: 6em; height: 6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.X :nth-child(16){
+  height: 6em;
+  top: 6em;
+  left: 6em;
+}
+.letter.X :nth-child(17){
+  height: 6em;
+  bottom: 6em;
+  left: 6em;
+}
+.letter.X :nth-child(18){
+  height: 6em;
+  top: 6em;
+  right: 6em;
+}
+.letter.X :nth-child(19){
+  height: 6em;
+  bottom: 6em;
+  right: 6em;
+}
+/* Y
+-------------------------------------------------- */
+.letter.Y :nth-child(2){
+  width: 12em; height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.Y :nth-child(3){
+  width: 12em; height: 12em;
+  top: 0em;
+  right: 0em;
+}
+.letter.Y :nth-child(4), .letter.Y :nth-child(6){
+  width: 6em; height: 6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.Y :nth-child(5), .letter.Y :nth-child(7){
+  width: 6em; height: 6em;
+  top: 3em;
+  right: 3em;
+}
+.letter.Y :nth-child(8){
+  width: 18em; height: 18em;
+  bottom: 9em;
+  left: 6em;
+}
+.letter.Y :nth-child(9){
+  width: 12em; height: 12em;
+  bottom: 12em;
+  left: 9em;
+}
+.letter.Y :nth-child(10){
+  width: 12em; height: 12em;
+  bottom: 0em;
+  left: 9em;
+}
+.letter.Y :nth-child(11), .letter.Y :nth-child(12){
+  width: 6em; height: 6em;
+  bottom: 3em;
+  left: 12em;
+}
+.letter.Y :nth-child(13){
+  height: 6em;
+  top: 6em;
+  left: 6em;
+}
+.letter.Y :nth-child(14){
+  height: 6em;
+  top: 6em;
+  right: 6em;
+}
+.letter.Y :nth-child(15){
+  height: 6em;
+  top: 18em;
+  left: 15em;
+}
+/* Z
+-------------------------------------------------- */
+.letter.Z :nth-child(2){
+  width: 12em; height: 12em;
+  top: 0em;
+  left: 0em;
+}
+.letter.Z :nth-child(3){
+  width: 12em; height: 12em;
+  bottom: 0em;
+  right: 0em;
+}
+.letter.Z :nth-child(4), .letter.Z :nth-child(5) {
+  width: 6em; height: 6em;
+  top: 3em;
+  left: 3em;
+}
+.letter.Z :nth-child(6), .letter.Z :nth-child(7) {
+  width: 6em; height: 6em;
+  bottom: 3em;
+  right: 3em;
+}
+.letter.Z :nth-child(8){
+  width: 6em; height: 6em;
+  top: 3em;
+  left: 15em;
+}
+.letter.Z :nth-child(9){
+  width: 6em; height: 6em;
+  bottom: 3em;
+  right: 15em;
+}
+.letter.Z :nth-child(8){
+  width: 6em; height: 6em;
+  top: 3em;
+  left: 15em;
+}
+.letter.Z :nth-child(9){
+  width: 6em; height: 6em;
+  bottom: 3em;
+  right: 15em;
+}
+.letter.Z :nth-child(10){
+  width: 6em; height: 6em;
+  top: 6em;
+  right: 6em;
+}
+.letter.Z :nth-child(11){
+  width: 12em; height: 12em;
+  top: 3em;
+  right: 3em;
+}
+.letter.Z :nth-child(12){
+  width: 6em; height: 6em;
+  bottom: 6em;
+  left: 6em;
+}
+.letter.Z :nth-child(13){
+  width: 12em; height: 12em;
+  bottom: 3em;
+  left: 3em;
+}
+.letter.Z :nth-child(14){
+  width: 9em;
+  top: 6em;
+  left: 6em;
+}
+.letter.Z :nth-child(15){
+  width: 9em;
+  bottom: 6em;
+  right: 6em;
+}
+.letter.Z :nth-child(16){
+  width: 12em;
+  top: 15em;
+  left: 9em;
+}
